@@ -1,10 +1,9 @@
-FROM node:0.12.7
+FROM node
 MAINTAINER Rex Tsai <rex.cc.tsai@gmail.com>
 
-# Usual update / upgrade
+# Usual update and install
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
-RUN apt-get install -y supervisor
+RUN apt-get update && apt-get install -y supervisor
 
 # Get slack-irc
 RUN npm install -g slack-irc
