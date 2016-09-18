@@ -6,8 +6,7 @@ ENV SLACK_IRC_VERSION=3.5.2
 
 # Usual update / upgrade
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update
-RUN apt-get install -y supervisor
+RUN apt-get update && apt-get install -y supervisor
 
 # Get slack-irc
 RUN npm install -g slack-irc@${SLACK_IRC_VERSION}
